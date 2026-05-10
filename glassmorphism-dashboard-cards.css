@@ -1,0 +1,47 @@
+.gm-card {
+  position: relative;
+  border-radius: 20px;
+  padding: 22px 20px 18px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.14);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  transition:
+    transform    0.35s cubic-bezier(.34,1.56,.64,1),
+    background   0.30s ease,
+    border-color 0.30s ease,
+    box-shadow   0.35s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.gm-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  background: rgba(255,255,255,0.13);
+  border-color: rgba(255,255,255,0.32);
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.50),
+    0 0 0 1px rgba(255,255,255,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.20);
+}
+
+@keyframes gm-card-entrance {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.94);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+.gm-card { animation: gm-card-entrance 0.6s ease both; }
+.gm-card:nth-child(1) { animation-delay: 0.15s; }
+.gm-card:nth-child(2) { animation-delay: 0.25s; }
+.gm-card:nth-child(3) { animation-delay: 0.35s; }
+.gm-card:nth-child(4) { animation-delay: 0.45s; }
+.gm-card:nth-child(5) { animation-delay: 0.55s; }
+.gm-card:nth-child(6) { animation-delay: 0.65s; }
